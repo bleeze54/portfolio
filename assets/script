@@ -1,0 +1,52 @@
+// Exemple de compétences à afficher dynamiquement
+const competences = [
+  { nom: "Créativité", texte: "Capacité à imaginer et innover dans mes projets." },
+  { nom: "Montage Vidéo", texte: "Compétences avancées sur Premiere Pro et After Effects." },
+  { nom: "Web Design", texte: "Conception de maquettes modernes et responsives." }
+];
+
+// Exemple de portrait chinois
+const portraitChinois = [
+  { type: "Un animal", contenu: "Un aigle, pour la vision et la liberté." },
+  { type: "Une couleur", contenu: "Le bleu, pour la sérénité et l'inspiration." },
+  { type: "Un livre", contenu: "Le pouvoir du moment présent d'Eckhart Tolle." }
+];
+
+// Génération des compétences
+const competencesContainer = document.getElementById('competences-container');
+competences.forEach(comp => {
+  competencesContainer.innerHTML += `
+    <div class="content">
+      <ul class="interpersonal-list">
+        <li class="spellgrp">
+          <h2 class="spell">${comp.nom}</h2>
+          <p class="texte-competences">${comp.texte}</p>
+        </li>
+      </ul>
+    </div>
+  `;
+});
+
+// Génération du portrait chinois
+const portraitContainer = document.getElementById('portrait-chinois-container');
+portraitChinois.forEach(item => {
+  portraitContainer.innerHTML += `
+    <article class="chinese">
+      <h3 class="chinese-type">${item.type}</h3>
+      <p>${item.contenu}</p>
+    </article>
+  `;
+});
+
+// Gestion du formulaire de contact
+const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  formMessage.style.display = 'block';
+  setTimeout(() => {
+    formMessage.style.display = 'none';
+    form.reset();
+  }, 5000);
+});
