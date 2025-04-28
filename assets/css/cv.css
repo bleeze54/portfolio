@@ -99,11 +99,17 @@ header {
 /* =========================== */
 .home-section {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    justify-content: flex-end; /* coller le texte à droite */
     flex-wrap: wrap;
+    gap: 50px;
+    text-align: right;
+    width: 100%;
+    padding-right: 50px; /* espace à droite */
+    padding-left: 20px; /* petit espace à gauche pour l'image */
 }
+
+
 
 .home-section h2 {
     font-size: 3rem;
@@ -430,9 +436,14 @@ transform: scale(1.05);
     margin-top: 20px;
 }
 
-.cta-button img {
-    align-items: center;
-    justify-content: center;
+.social-icons img {
+    width: 40px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
 }
 
 .form-wrapper {
