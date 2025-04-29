@@ -118,24 +118,41 @@ header {
     border-radius: 50%;
     background-color: var(--white-70);
 }
-.title3{
-    font-size: 2em;
-    border-right: 2px solid black;
+.typewriter-effect {
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+  }
+  
+  .typewriter-effect > .text {
+    max-width: 0;
+    animation: typing 3s steps(var(--characters)) infinite;
     white-space: nowrap;
     overflow: hidden;
-    width: 0;
-    animation: typing 5s steps(40, end) infinite, blink-caret 0.75s step-end infinite;
-}
-
+  }
+  
+  .typewriter-effect::after {
+    content: " |";
+    animation: blink 1s infinite;
+    animation-timing-function: step-end;
+  }
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: black; }
-}
+    75%,
+    100% {
+      max-width: calc(var(--characters) * 1ch);
+    }
+  }
+  
+@keyframes blink {
+    0%,
+    75%,
+    100% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+  }
 
 /* =========================== */
 /*       SECTION ACCUEIL       */
@@ -218,6 +235,37 @@ article.cv_info:hover {
     flex-direction: column;
 }
 
+.home-title ,.home-subtitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: sans-serif;
+    background: linear-gradient(
+      270deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet,
+      red
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowMove 4s linear infinite;
+  }
+
+  @keyframes rainbowMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
 .slider,.languages {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
@@ -382,6 +430,31 @@ main {
     transform: scale(1.05);
 }
 
+#spell-INFO-name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: monospace; 
+    /* Tu peux changer cette couleur */
+  }
+
+  .cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
 /* =========================== */
 /*         SECTION PROJETS     */
 /* =========================== */
