@@ -67,6 +67,7 @@ header {
 }
 
 .pfp{
+    margin-top: 2%;
     animation: float 5s steps(40, end) infinite;
 
 
