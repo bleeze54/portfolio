@@ -425,7 +425,10 @@ main {
     padding: 20px;
 }
 
-
+#citation-texte{
+    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive;
+  }
 .spellgrp:hover {
     transform: scale(1.05);
 }
