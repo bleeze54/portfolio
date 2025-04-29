@@ -580,6 +580,13 @@ article p {
     line-height: 1.6;
 }
 
+.social-icons li:hover{
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+.social-icons li{
+    transition: all 0.3s ease-in-out;
+}
 /* =========================== */
 /*        SECTION CONTACT      */
 /* =========================== */
