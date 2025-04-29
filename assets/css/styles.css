@@ -79,7 +79,15 @@ header {
 .nav-item {
     color: var(--white-70);
 }
-
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    color: var(--white-90);
+}
+.nav-item:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease-in-out;
+}
 .current::after {
     position: absolute;
     content: "";
